@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">g-optics</string>
+
+    <string name="welcome_message">Bienvenido a G-Optics</string>
 </resources>
