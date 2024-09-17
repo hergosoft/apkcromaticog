@@ -13,6 +13,11 @@
 
     </string-array>
 
+    <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
+    <string name="bienvenido">BIENVENID@</string>
+
+
+
     <string name="login_text">ACCEDER</string>
     <string name="username_hint">USUARIO</string>
     <string name="password_hint">CONTRASEÑA</string>
