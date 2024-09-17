@@ -9,4 +9,23 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
     </style>
+
+    <!-- Tema personalizado para el DatePickerDialog -->
+    <style name="CustomDatePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Color de los botones (Aceptar/Cancelar) -->
+        <item name="colorAccent">@color/blue</item>
+
+        <!-- Asegurarse de que los botones tengan color de texto visible -->
+        <item name="android:buttonBarButtonStyle">@style/CustomDialogButton</item>
+    </style>
+
+
+
+    <!-- Estilo personalizado para los botones del diálogo -->
+    <style name="CustomDialogButton" parent="Widget.AppCompat.Button">
+        <!-- Asegurar que el texto del botón sea visible -->
+        <item name="android:textColor">@color/blue</item>
+        <!-- Cambiar el color de fondo del botón -->
+        <item name="android:backgroundTint">@color/blue</item>
+    </style>
 </resources>

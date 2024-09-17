@@ -2,4 +2,41 @@
     <string name="app_name">g-optics</string>
 
     <string name="welcome_message">Bienvenido a G-Optics</string>
+
+    <string-array name="ultima_visita">
+        <item>1 MES</item>
+        <item>2 MESES</item>
+        <item>3 MESES</item>
+        <item>6 MESES</item>
+        <item>9 MESES</item>
+        <item>12 MESES</item>
+
+    </string-array>
+
+    <string name="login_text">ACCEDER</string>
+    <string name="username_hint">USUARIO</string>
+    <string name="password_hint">CONTRASEÑA</string>
+    <string name="login_button_text">INICIAR</string>
+    <string name="wifi_disconnection_warning">NO DESCONECTAR LA RED WIFI</string>
+
+
+
+    <string name="logout_button">Salir</string>
+    <string name="hystory_text">HISTORIA CLINICA</string>
+    <string name="trabajador_text">TRABAJADOR: </string>
+    <string name="agencia_text">AGENCIA: </string>
+    <string name="datos_personales">DATOS PERSONALES: </string>
+    <string name="nombre_completo">NOMBRE COMPLETO: </string>
+    <string name="edad">EDAD: </string>
+    <string name="nit_dpi">NIT - DPI: </string>
+    <string name="ocupacion">OCUPACION: </string>
+    <string name="telefono">TELEFONO: </string>
+    <string name="direccion">DIRECCION: </string>
+    <string name="antecedentes_medicos">ANTECEDENTES MEDICOS: </string>
+    <string name="cirugia_tratamiento_ocular">CIRUGIA O TRATAMIENTO OCULAR: </string>
+    <string name="usa_lentes">USA LENTES: </string>
+    <string name="si">SI </string>
+    <string name="no">NO </string>
+    <string name="ultima_evaluacion">ULTIMA EVALUACION: </string>
+    <string name="motivo_consulta">MOTIVO DE CONSULTA: </string>
 </resources>

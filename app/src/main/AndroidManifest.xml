@@ -24,6 +24,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".HystoryFormActivity"
+            android:screenOrientation="landscape"
+            android:resizeableActivity="false"
+            android:exported="true"
+            ></activity>
+
+
     </application>
 
 </manifest>

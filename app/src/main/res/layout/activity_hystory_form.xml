@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:orientation="vertical"
+            android:padding="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="start"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/logoutbtn"
+                    android:layout_width="100dp"
+                    android:layout_weight="1"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="900dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="@string/logout_button"
+                    android:textSize="18sp"
+                    app:cornerRadius="20dp"
+                    app:layout_constraintEnd_toStartOf="@+id/imageViewIcon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hystorytext"
+                    android:layout_width="541dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="366dp"
+                    android:text="@string/hystory_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/label"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.92"
+                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/trabajador"
+                    android:layout_width="541dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="380dp"
+                    android:text="@string/trabajador_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/label"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/agencia"
+                    android:layout_width="541dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="380dp"
+                    android:text="@string/agencia_text"
+                    android:textAlignment="center"
+                    android:textColor="@color/label"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageViewIcon"
+                    android:layout_width="212dp"
+                    android:layout_height="152dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="16dp"
+
+
+                    android:src="@drawable/goptics"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/custom_edittext"
+                android:gravity="start"
+                android:orientation="vertical"
+                android:padding="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/datos_personales"
+                    android:textAlignment="center"
+                    android:textColor="@color/label"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--            -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text2"
+                            android:text="@string/nombre_completo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/txtnombre"
+                            android:layout_width="464dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/edad"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/calendarEditText"
+                                android:layout_width="176dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/custom_edittext"
+                                android:drawablePadding="8dp"
+                                android:hint=""
+                                android:inputType="none"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:id="@+id/textedad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginStart="20dp"
+                                android:text=""
+                                android:textAlignment="center"
+                                android:textColor="@color/label"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text4"
+                                android:text="@string/nit_dpi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginEnd="20dp"
+
+                                android:textAlignment="center"
+                                android:textColor="@color/label"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/txtnit"
+                                android:layout_width="323dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/custom_edittext"
+                                android:drawablePadding="8dp"
+                                android:maxLength="13"
+                                android:hint=""
+                                android:inputType="number"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/text5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="1dp"
+                                android:layout_marginEnd="20dp"
+                                android:text="@string/ocupacion"
+                                android:textAlignment="center"
+                                android:textColor="@color/label"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="1.0"
+                                app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/txtocupacion"
+                                android:layout_width="320dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:background="@drawable/custom_edittext"
+                                android:drawablePadding="8dp"
+                                android:hint=""
+                                android:inputType="textCapCharacters"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text6"
+                            android:text="@string/telefono"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <EditText
+                            android:id="@+id/txttelefono"
+                            android:layout_width="323dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:maxLength="8"
+                            android:hint=""
+                            android:inputType="number"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text7"
+                            android:text="@string/direccion"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <EditText
+                            android:id="@+id/txtdireccion"
+                            android:layout_width="406dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <!--            -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/antecedentes_medicos"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/txtantecedentes"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:maxWidth="500dp"
+                            android:minWidth="200dp"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+                    <!-- Segundo LinearLayout -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+                            android:gravity="center"
+                            android:text="@string/cirugia_tratamiento_ocular"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/txttratamiento"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:maxWidth="500dp"
+                            android:minWidth="200dp"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/usa_lentes"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <CheckBox
+                            android:id="@+id/checklentessi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/si"
+                            android:buttonTint="@color/blue"
+                            android:textColor="@color/label"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                        <CheckBox
+                            android:id="@+id/checklentesno"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/no"
+                            android:buttonTint="@color/blue"
+                            android:textColor="@color/label"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/text11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/ultima_evaluacion"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Spinner
+                            android:id="@+id/spUltimoMes"
+                            android:layout_width="188dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:entries="@array/ultima_visita"
+                            android:textColor="@color/label" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/motivo_consulta"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/txtmc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
