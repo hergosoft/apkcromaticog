@@ -33,7 +33,7 @@
                 android:gravity="center"
                 android:textSize="18dp"
                 android:padding="10dp"
-                android:text="Bienvenid@" />
+                android:text="@string/bienvenido" />
 
             <Button
                 android:id="@+id/siguiente"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
 
                 android:backgroundTint="@color/blue"
-                android:text="Inciciar"
+                android:text="@string/login_button_text"
                 android:textSize="18sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/hystorytext"

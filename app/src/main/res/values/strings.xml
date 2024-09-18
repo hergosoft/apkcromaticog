@@ -13,9 +13,18 @@
 
     </string-array>
 
+    <string-array name="arraymedio">
+        <item>FACEBOOK</item>
+        <item>INSTAGRAM</item>
+        <item>X</item>
+        <item>ANUNCIO</item>
+    </string-array>
+
+
     <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
     <string name="bienvenido">BIENVENID@</string>
-
+    <string name="regresar">REGRESAR</string>
+    <string name="labelmedios">MEDIO: </string>
 
 
     <string name="login_text">ACCEDER</string>
@@ -44,4 +53,32 @@
     <string name="no">NO </string>
     <string name="ultima_evaluacion">ULTIMA EVALUACION: </string>
     <string name="motivo_consulta">MOTIVO DE CONSULTA: </string>
+
+    <string name="rx_uso">RX USO</string>
+    <string name="retinoscopia">RETINOSCOPIA</string>
+    <string name="autorefactometro">AUTOREFACTOMETRO</string>
+    <string name="lente_contacto">LENTE DE CONTACTO</string>
+    <string name="rx_final">RX FINAL</string>
+
+
+    <string name="ojo">OJO</string>
+    <string name="esf">ESF.</string>
+    <string name="cil">CIL.</string>
+    <string name="eje">EJE</string>
+    <string name="adv">A/V</string>
+    <string name="add_">ADD.</string>
+    <string name="a_v">A.V</string>
+    <string name="od">OD</string>
+    <string name="oi">OI</string>
+    <string name="add">ADD</string>
+
+    <string name="avsc">A.V.S.C</string>
+    <string name="ao">AO</string>
+
+
+    <string name="dnp">DNP</string>
+    <string name="observaciones">OBSERVACIONES</string>
+    <string name="altura">ALTURA</string>
+    <string name="olvidarcampos">NO OLVIDES LLENAR TODOS LOS CAMPOS</string>
+    <string name="btnguardar">GUARDAR</string>
 </resources>

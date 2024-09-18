@@ -35,7 +35,7 @@
 
                     <Button
                         android:id="@+id/logoutbtn"
-                        android:layout_width="90dp"
+                        android:layout_width="120dp"
                         android:layout_height="47dp"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="10dp"
@@ -88,7 +88,7 @@
                     <TextView
                         android:id="@+id/agencia"
                         android:layout_width="wrap_content"
-                        andrdoid:layout_height="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="0dp"
                         android:text="AGENCIA: "
