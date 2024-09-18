@@ -15,107 +15,109 @@
             android:layout_height="match_parent"
             android:gravity="start"
             android:orientation="vertical"
-            android:padding="15dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:gravity="start"
-            android:orientation="horizontal">
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
                 android:gravity="start"
-                android:orientation="vertical">
-                <Button
-                    android:id="@+id/logoutbtn"
-                    android:layout_width="100dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_height="47dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="900dp"
-                    android:backgroundTint="@color/blue"
-                    android:text="@string/logout_button"
-                    android:textSize="18sp"
-                    app:cornerRadius="20dp" />
-            </LinearLayout>
+                    android:gravity="start"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/logoutbtn"
+                        android:layout_width="90dp"
+                        android:layout_height="47dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="900dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/blue"
+                        android:text="Salir"
+                        android:textSize="18sp"
+                        app:cornerRadius="20dp"
+                        app:layout_constraintEnd_toStartOf="@+id/imageViewIcon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
 
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hystorytext"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="0dp"
-                    android:text="@string/hystory_text"
-                    android:textAlignment="center"
+
+                    android:layout_weight="2.4"
                     android:gravity="center"
-                    android:textColor="@color/label"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/trabajador"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/hystorytext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="0dp"
+                        android:text="HISTORIA CLINICA"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:textColor="@color/label"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/trabajador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="0dp"
+                        android:text="TRABAJADOR: "
+                        android:textAlignment="center"
+                        android:textColor="@color/label"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/agencia"
+                        android:layout_width="wrap_content"
+                        andrdoid:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="0dp"
+                        android:text="AGENCIA: "
+                        android:textAlignment="center"
+                        android:textColor="@color/label"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="0dp"
-                    android:text="@string/trabajador_text"
-                    android:textAlignment="center"
-                    android:textColor="@color/label"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    />
+                    android:gravity="end"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/agencia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="0dp"
-                    android:text="@string/agencia_text"
-                    android:textAlignment="center"
-                    android:textColor="@color/label"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    />
+                    <ImageView
+                        android:id="@+id/imageViewIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="152dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="5dp"
+                        android:src="@drawable/goptics"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/imageViewIcon"
-                    android:layout_width="151dp"
-                    android:layout_height="152dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="6dp"
-
-
-                    android:src="@drawable/goptics"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-            </LinearLayout>
-        </LinearLayout>
 
 
 
