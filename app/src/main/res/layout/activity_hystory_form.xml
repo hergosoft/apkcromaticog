@@ -44,68 +44,55 @@
                     android:backgroundTint="@color/blue"
                     android:text="@string/logout_button"
                     android:textSize="18sp"
-                    app:cornerRadius="20dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageViewIcon"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
+                    app:cornerRadius="20dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="187dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
 
                 android:layout_weight="1"
-                android:gravity="start"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/hystorytext"
-                    android:layout_width="541dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginEnd="366dp"
+                    android:layout_marginEnd="0dp"
                     android:text="@string/hystory_text"
                     android:textAlignment="center"
+                    android:gravity="center"
                     android:textColor="@color/label"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.92"
-                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/trabajador"
-                    android:layout_width="541dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginEnd="380dp"
+                    android:layout_marginEnd="0dp"
                     android:text="@string/trabajador_text"
                     android:textAlignment="center"
                     android:textColor="@color/label"
                     android:textSize="25sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    />
 
                 <TextView
                     android:id="@+id/agencia"
-                    android:layout_width="541dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:layout_marginEnd="380dp"
+                    android:layout_marginEnd="0dp"
                     android:text="@string/agencia_text"
                     android:textAlignment="center"
                     android:textColor="@color/label"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="0dp"
@@ -116,10 +103,10 @@
 
                 <ImageView
                     android:id="@+id/imageViewIcon"
-                    android:layout_width="212dp"
+                    android:layout_width="151dp"
                     android:layout_height="152dp"
                     android:layout_marginTop="1dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="6dp"
 
 
                     android:src="@drawable/goptics"
@@ -184,11 +171,7 @@
                             android:textAlignment="center"
                             android:textColor="@color/label"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:textStyle="bold" />
 
                         <EditText
                             android:id="@+id/txtnombre"
@@ -515,11 +498,7 @@
                             android:textAlignment="center"
                             android:textColor="@color/label"
                             android:textSize="15sp"
-                            android:textStyle="bold"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:textStyle="bold" />
 
                         <EditText
                             android:id="@+id/txttratamiento"
