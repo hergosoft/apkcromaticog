@@ -9,17 +9,17 @@
         <item>3 MESES</item>
         <item>6 MESES</item>
         <item>9 MESES</item>
-        <item>12 MESES</item>
-
+        <item>1 AÑO</item>
+        <item>MAS DE 1 AÑO</item>
     </string-array>
 
     <string-array name="arraymedio">
-        <item>FACEBOOK</item>
-        <item>INSTAGRAM</item>
-        <item>X</item>
-        <item>ANUNCIO</item>
+        <item>REDES</item>
+        <item>CENTRO COMERCIAL</item>
+        <item>REFERIDO</item>
+        <item>VOLANTEO</item>
+        <item>CLINICA</item>
     </string-array>
-
 
     <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
     <string name="bienvenido">BIENVENID@</string>
@@ -81,4 +81,5 @@
     <string name="altura">ALTURA</string>
     <string name="olvidarcampos">NO OLVIDES LLENAR TODOS LOS CAMPOS</string>
     <string name="btnguardar">GUARDAR</string>
+    <string name="dialogsave">DATOS GUARDADOS CORRECTAMENTE</string>
 </resources>

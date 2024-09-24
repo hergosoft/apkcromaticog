@@ -12,18 +12,14 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.g_optics.databinding.ActivityHystoryFormBinding
+import com.app.g_optics.ui.login.LoginActivity
 import java.util.*
 
 class HystoryFormActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHystoryFormBinding
     private var selectedMonth: String? = null
-    // Bandera para controlar el estado de visibilidad de los contenedores
-    private var isContentVisible1 = false
-    private var isContentVisible2 = false
-    private var isContentVisible3 = false
-
-
+    private var selectedMedio: String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,6 +73,21 @@ class HystoryFormActivity : AppCompatActivity() {
             }
         }
 
+        binding.spmedios.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                handleMedioSelection(parent, position)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                selectedMonth = null
+            }
+        }
+
         // Inicializa el click para abrir el calendario
         binding.calendarEditText.setOnClickListener {
             showDatePicker()
@@ -104,11 +115,33 @@ class HystoryFormActivity : AppCompatActivity() {
             }
         }
 
+        // Referencias a los CheckBox
+        val checkBoxciruSi = findViewById<CheckBox>(R.id.checkcirugiasi)
+        val checkBoxciruNo = findViewById<CheckBox>(R.id.checkcirugiano)
+
+        // Listener para "Sí"
+        checkBoxciruSi.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                checkBoxciruNo.isEnabled = false // Deshabilita el "No" cuando "Sí" está marcado
+            } else {
+                checkBoxciruNo.isEnabled = true // Habilita el "No" cuando "Sí" está desmarcado
+            }
+        }
+
+        // Listener para "No"
+        checkBoxciruNo.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                checkBoxciruSi.isEnabled = false // Deshabilita el "Sí" cuando "No" está marcado
+            } else {
+                checkBoxciruSi.isEnabled = true // Habilita el "Sí" cuando "No" está desmarcado
+            }
+        }
+
 
     }
 
     private fun navigateToLogin() {
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish() // Opcional: Termina la actividad actual para que no quede en el historial
     }
@@ -124,6 +157,19 @@ class HystoryFormActivity : AppCompatActivity() {
             Toast.makeText(this, "Mes guardado: $selectedMonth", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "No se ha seleccionado un mes", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun handleMedioSelection(parent: AdapterView<*>?, position: Int) {
+        selectedMedio = parent?.getItemAtPosition(position).toString()
+        savemedioSelection()
+    }
+    private fun savemedioSelection() {
+        if (selectedMedio != null) {
+            // Guardar el mes seleccionado en alguna base de datos o preferencias
+            Toast.makeText(this, "Medio guardado: $selectedMedio", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "No se ha seleccionado un medio", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -146,15 +192,6 @@ class HystoryFormActivity : AppCompatActivity() {
         )
 
         datePicker.show()
-    }
-    private fun handleDateSelection(year: Int, month: Int, day: Int) {
-        // Formatear la fecha seleccionada
-        val selectedDate = "$day/${month + 1}/$year"
-        binding.calendarEditText.setText(selectedDate)
-
-        // Calcular la edad
-        val age = calculateAge(year, month, day)
-        binding.textedad.text = "$age años"
     }
 
     private fun calculateAge(year: Int, month: Int, day: Int): Int {

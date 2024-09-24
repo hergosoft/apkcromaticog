@@ -1,4 +1,5 @@
-package com.app.g_optics
+package com.app.g_optics.ui.login
+
 
 import android.app.Dialog
 import android.content.Intent
@@ -7,19 +8,20 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
-import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.app.g_optics.HystoryFormActivity
+import com.app.g_optics.R
+import com.app.g_optics.core.Result
 import com.app.g_optics.databinding.ActivityMainBinding
-import com.app.g_optics.login.LoginRequest
-import com.app.g_optics.login.LoginResponse
-import com.app.g_optics.login.RetrofitClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.app.g_optics.repositories.login.LoginRepository
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val loginViewModel: LoginViewModel by viewModels {
+        LoginViewModelFactory(LoginRepository())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +32,11 @@ class MainActivity : AppCompatActivity() {
             if (checkFields()) {
                 val username = binding.username.text.toString()
                 val password = binding.password.text.toString()
-                login(username, password)
+                loginViewModel.login(username, password)
             }
         }
+
+        observeLoginResult()
     }
 
     private fun checkFields(): Boolean {
@@ -48,68 +52,48 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun login(usuario: String, pass: String) {
-        val loginRequest = LoginRequest(usuario, pass)
-
-        RetrofitClient.instance.login(loginRequest).enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                // Verifica si la respuesta es exitosa
-                if (response.isSuccessful) {
-                    val message = response.body()?.message
-                    if (message == "Login exitoso") {
-                        welcome_dialog()  // Mostrar el diálogo de bienvenida
+    private fun observeLoginResult() {
+        loginViewModel.loginResult.observe(this) { result ->
+            when (result) {
+                is Result.Success -> {
+                    if (result.data.message == "Login exitoso") {
+                        welcomeDialog()
                     } else {
-                        incorrect_dialog()  // Mensaje de usuario o contraseña incorrectos
-                    }
-                } else {
-                    // Aquí manejamos el caso donde la respuesta no es exitosa
-                    val errorMessage = response.errorBody()?.string() ?: "Error desconocido"
-                    if (errorMessage.contains("Usuario o contraseña incorrectos")) {
-                        incorrect_dialog()  // Mostrar diálogo de error
-                    } else {
-                        Toast.makeText(this@MainActivity, "Error: $errorMessage", Toast.LENGTH_SHORT).show()
+                        incorrectDialog()
                     }
                 }
+                is Result.Error -> {
+                    incorrectDialog()
+                }
             }
-
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "Error de conexión: ${t.message}", Toast.LENGTH_SHORT).show()
-            }
-        })
+        }
     }
 
-
-    private fun welcome_dialog() {
+    private fun welcomeDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(R.layout.dialog_welcome)
 
         val siguiente = dialog.findViewById<Button>(R.id.siguiente)
-
         siguiente.setOnClickListener {
             dialog.dismiss()
-            val intent = Intent(this, HystoryFormActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, HystoryFormActivity::class.java))
             finish()
         }
-
         dialog.show()
     }
 
-    private fun incorrect_dialog() {
+    private fun incorrectDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(R.layout.dialog_incorrect)
 
         val ocultar = dialog.findViewById<Button>(R.id.ocultar)
-
         ocultar.setOnClickListener {
             dialog.dismiss()
         }
-
         dialog.show()
     }
-
 }
