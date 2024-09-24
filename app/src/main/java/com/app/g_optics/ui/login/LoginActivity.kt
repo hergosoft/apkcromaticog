@@ -10,7 +10,7 @@ import android.view.Window
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.app.g_optics.HystoryFormActivity
+import com.app.g_optics.ui.history.HystoryFormActivity
 import com.app.g_optics.R
 import com.app.g_optics.core.Result
 import com.app.g_optics.databinding.ActivityMainBinding

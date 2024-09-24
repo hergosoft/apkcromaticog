@@ -65,7 +65,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginEnd="0dp"
-                        android:text="HISTORIA CLINICA"
+                        android:text="@string/history_text"
                         android:textAlignment="center"
                         android:gravity="center"
                         android:textColor="@color/label"
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="0dp"
-                        android:text="TRABAJADOR: "
+                        android:text="@string/trabajador_text"
                         android:textAlignment="center"
                         android:textColor="@color/label"
                         android:textSize="25sp"
@@ -91,12 +91,11 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="0dp"
-                        android:text="AGENCIA: "
+                        android:text="@string/agencia_text"
                         android:textAlignment="center"
                         android:textColor="@color/label"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        />
+                        android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="0dp"
@@ -734,7 +733,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_layout"
                 android:gravity="start"
                 android:orientation="vertical"
                 android:padding="10dp">
@@ -800,7 +799,7 @@
 
                                 android:text="@string/ojo"
                                 android:textColor="@color/label"
-                                android:textSize="13sp"
+                                android:textSize="15sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -842,7 +841,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtesfodrxu"
+                                android:id="@+id/txtesfodrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -857,7 +856,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtesfoirxu"
+                                android:id="@+id/txtesfoirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -874,8 +873,8 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="1dp"
-                                android:gravity="center"
+                                android:gravity="end"
+                                android:padding="5dp"
                                 android:text="@string/add"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
@@ -901,7 +900,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtcilodrxu"
+                                android:id="@+id/txtcilodrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -916,7 +915,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciloirxu"
+                                android:id="@+id/txtciloirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -931,7 +930,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciladdrxu"
+                                android:id="@+id/txtaddrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -964,7 +963,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtejeodrxu"
+                                android:id="@+id/txtejeodrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -980,7 +979,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtejeoirxu"
+                                android:id="@+id/txtejeoirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1013,7 +1012,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtadvodrxu"
+                                android:id="@+id/txtadvodrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1028,7 +1027,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtadvoirxu"
+                                android:id="@+id/txtadvoirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1061,7 +1060,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtadd_odrxu"
+                                android:id="@+id/txtadd_odrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1077,7 +1076,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtadd_oirxu"
+                                android:id="@+id/txtadd_oirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1111,7 +1110,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txta_vodrxu"
+                                android:id="@+id/txtav1odrx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1126,7 +1125,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txta_voirxu"
+                                android:id="@+id/txtav1oirx1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="2dp"
@@ -1218,7 +1217,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtavscodrxu"
+                                android:id="@+id/txtavscodrx2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="1dp"
@@ -1233,7 +1232,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtavscoirxu"
+                                android:id="@+id/txtavscoirx2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="1dp"
@@ -1248,7 +1247,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtavscaorxu"
+                                android:id="@+id/txtavscaorx2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginVertical="1dp"
@@ -1279,7 +1278,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_layout"
                 android:gravity="start"
                 android:orientation="vertical"
                 android:padding="10dp"
@@ -1395,7 +1394,7 @@
 
                             <!-- EditText para OD -->
                             <EditText
-                                android:id="@+id/txtesfodrt"
+                                android:id="@+id/txtesfodrx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1411,7 +1410,7 @@
 
                             <!-- EditText para OI -->
                             <EditText
-                                android:id="@+id/txtesfoirt"
+                                android:id="@+id/txtesfoirx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1429,9 +1428,8 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center"
-                                android:padding="0dp"
+                                android:gravity="end"
+                                android:padding="5dp"
                                 android:text="@string/add"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
@@ -1456,7 +1454,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtcilodrt"
+                                android:id="@+id/txtcilodrx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1471,7 +1469,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciloirt"
+                                android:id="@+id/txtciloirx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1486,7 +1484,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciladdrt"
+                                android:id="@+id/txtaddrx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1519,7 +1517,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtejeodrt"
+                                android:id="@+id/txtejeodrx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1535,7 +1533,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtejeoirt"
+                                android:id="@+id/txtejeoirx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1568,7 +1566,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtadvodrt"
+                                android:id="@+id/txtadvodrx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1583,7 +1581,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtadvoirt"
+                                android:id="@+id/txtadvoirx3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1622,7 +1620,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_layout"
                 android:gravity="start"
                 android:orientation="vertical"
                 android:padding="10dp"
@@ -1676,6 +1674,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -1736,7 +1735,7 @@
 
                             <!-- EditText para OD -->
                             <EditText
-                                android:id="@+id/txtesfodat"
+                                android:id="@+id/txtesfodrx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1752,7 +1751,7 @@
 
                             <!-- EditText para OI -->
                             <EditText
-                                android:id="@+id/txtesfoiat"
+                                android:id="@+id/txtesfoirx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1770,9 +1769,8 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center"
-                                android:padding="0dp"
+                                android:gravity="end"
+                                android:padding="5dp"
                                 android:text="@string/add"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
@@ -1797,7 +1795,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtcilodat"
+                                android:id="@+id/txtcilodrx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1812,7 +1810,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciloiat"
+                                android:id="@+id/txtciloirx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1827,7 +1825,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciladdat"
+                                android:id="@+id/txtaddrx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1860,7 +1858,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtejeodat"
+                                android:id="@+id/txtejeodrx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1876,7 +1874,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtejeoiat"
+                                android:id="@+id/txtejeoirx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1909,7 +1907,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtadvodat"
+                                android:id="@+id/txtadvodrx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1924,7 +1922,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtadvoiat"
+                                android:id="@+id/txtadvoirx4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -1960,7 +1958,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_layout"
                 android:gravity="start"
                 android:orientation="vertical"
                 android:padding="10dp"
@@ -2003,17 +2001,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="0dp"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:visibility="gone"> <!-- Evita margen inferior -->
 
                     <!-- Primer contenedor -->
                     <LinearLayout
                         android:id="@+id/lc1"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:orientation="horizontal">
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -2074,7 +2073,7 @@
 
                             <!-- EditText para OD -->
                             <EditText
-                                android:id="@+id/txtesfodlc"
+                                android:id="@+id/txtesfodrx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2090,7 +2089,7 @@
 
                             <!-- EditText para OI -->
                             <EditText
-                                android:id="@+id/txtesfoilc"
+                                android:id="@+id/txtesfoirx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2103,18 +2102,6 @@
                                 android:padding="8dp"
                                 android:textAllCaps="true"
                                 android:textColor="@color/black" />
-
-                            <!-- TextView para "add" -->
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="center"
-                                android:padding="0dp"
-                                android:text="@string/add"
-                                android:textColor="@color/label"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -2135,7 +2122,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtcilodlc"
+                                android:id="@+id/txtcilodrx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2150,22 +2137,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciloilc"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_marginVertical="1dp"
-                                android:background="@drawable/custom_edittext"
-                                android:drawablePadding="8dp"
-                                android:hint=""
-                                android:inputType="number"
-                                android:maxLength="13"
-                                android:padding="8dp"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black" />
-
-                            <EditText
-                                android:id="@+id/txtciladdlc"
+                                android:id="@+id/txtciloirx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2198,7 +2170,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtejeodlc"
+                                android:id="@+id/txtejeodrx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2214,7 +2186,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtejeoilc"
+                                android:id="@+id/txtejeoirx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2247,7 +2219,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtadvodlc"
+                                android:id="@+id/txtadvodrx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2262,7 +2234,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtadvoilc"
+                                android:id="@+id/txtadvoirx5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2287,6 +2259,56 @@
 
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:gravity="end"
+                                android:padding="11dp"
+                                android:text="@string/observaciones"
+                                android:textColor="@color/label"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="2"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/txtobservacionesrx5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_marginVertical="01dp"
+                                android:background="@drawable/custom_edittext"
+                                android:hint=""
+                                android:inputType="textCapCharacters"
+                                android:maxLength="13"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
             <!--                -->
@@ -2301,7 +2323,7 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/custom_edittext"
+                android:background="@drawable/custom_layout"
                 android:gravity="start"
                 android:orientation="vertical"
                 android:padding="15dp">
@@ -2407,7 +2429,7 @@
 
                             <!-- EditText para OD -->
                             <EditText
-                                android:id="@+id/txtesfodrxf"
+                                android:id="@+id/txtesfodrx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2423,7 +2445,7 @@
 
                             <!-- EditText para OI -->
                             <EditText
-                                android:id="@+id/txtesfoirxf"
+                                android:id="@+id/txtesfoirx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2436,18 +2458,6 @@
                                 android:padding="8dp"
                                 android:textAllCaps="true"
                                 android:textColor="@color/black" />
-
-                            <!-- TextView para "add" -->
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:gravity="end"
-                                android:paddingTop="6dp"
-                                android:text="@string/add"
-                                android:textColor="@color/label"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
 
                         </LinearLayout>
 
@@ -2468,7 +2478,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtcilodrxf"
+                                android:id="@+id/txtcilodrx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2483,22 +2493,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtciloirxf"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="4dp"
-                                android:layout_marginVertical="1dp"
-                                android:background="@drawable/custom_edittext"
-                                android:drawablePadding="8dp"
-                                android:hint=""
-                                android:inputType="number"
-                                android:maxLength="13"
-                                android:padding="8dp"
-                                android:textAllCaps="true"
-                                android:textColor="@color/black" />
-
-                            <EditText
-                                android:id="@+id/txtciladdrxf"
+                                android:id="@+id/txtciloirx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2531,7 +2526,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txtejeodrxf"
+                                android:id="@+id/txtejeodrx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2547,7 +2542,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txtejeoirxf"
+                                android:id="@+id/txtejeoirx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2592,7 +2587,7 @@
                                 android:textStyle="bold" />
 
                             <EditText
-                                android:id="@+id/txta_vodrxf"
+                                android:id="@+id/txtadvodrx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2607,7 +2602,7 @@
                                 android:textColor="@color/black" />
 
                             <EditText
-                                android:id="@+id/txta_voirxf"
+                                android:id="@+id/txtadvoirx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2623,7 +2618,54 @@
 
 
                             <EditText
-                                android:id="@+id/txtaltrxf"
+                                android:id="@+id/txtalturarx6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_marginVertical="1dp"
+                                android:background="@drawable/custom_edittext"
+                                android:drawablePadding="8dp"
+                                android:hint=""
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/add"
+                                android:textColor="@color/label"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:id="@+id/txtaddodrx6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="4dp"
+                                android:layout_marginVertical="1dp"
+                                android:background="@drawable/custom_edittext"
+                                android:drawablePadding="8dp"
+                                android:hint=""
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:padding="8dp"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black" />
+
+                            <EditText
+                                android:id="@+id/txtaddoirx6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -2656,7 +2698,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="0dp"
-                    android:background="@drawable/custom_edittext"
+                    android:background="@drawable/custom_layout"
                     android:padding="10dp"
                     android:orientation="horizontal"
                     android:visibility="visible">
@@ -2705,7 +2747,7 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <EditText
-                            android:id="@+id/txtoddnprxf"
+                            android:id="@+id/txtoddnprx6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="4dp"
@@ -2744,7 +2786,7 @@
                         android:layout_weight="1"
                         android:orientation="vertical">
                         <EditText
-                            android:id="@+id/txtoidnprxf"
+                            android:id="@+id/txtoidnprx6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="4dp"
@@ -2805,14 +2847,14 @@
                         android:layout_gravity="center_horizontal"
                         android:orientation="horizontal">
                         <EditText
-                            android:id="@+id/txtoddnprxfaasf"
+                            android:id="@+id/txtobservaciones"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="4dp"
                             android:layout_marginVertical="01dp"
                             android:background="@drawable/custom_edittext"
                             android:hint=""
-                            android:inputType="number"
+                            android:inputType="textCapCharacters"
                             android:maxLength="13"
                             android:padding="8dp"
                             android:textAllCaps="true"

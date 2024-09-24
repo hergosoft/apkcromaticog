@@ -36,9 +36,9 @@
 
 
     <string name="logout_button">Salir</string>
-    <string name="hystory_text">HISTORIA CLINICA</string>
+    <string name="history_text">HISTORIA CLINICA</string>
     <string name="trabajador_text">TRABAJADOR: </string>
-    <string name="agencia_text">AGENCIA: </string>
+    <string name="agencia_text">AGENCIA: 2 </string>
     <string name="datos_personales">DATOS PERSONALES: </string>
     <string name="nombre_completo">NOMBRE COMPLETO: </string>
     <string name="edad">EDAD: </string>

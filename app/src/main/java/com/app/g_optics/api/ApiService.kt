@@ -12,5 +12,5 @@ interface ApiService {
     fun login(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
     @POST("historyclient/save")
-    fun savehistory(@Body historyRequest: HistoryRequest): Call<HistoryResponse>
+    fun saveHistory(@Body historyRequest: HistoryRequest): Call<HistoryResponse>
 }

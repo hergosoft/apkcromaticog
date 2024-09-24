@@ -1,3 +1,5 @@
 package com.app.g_optics.models.history
 
-class HistoryResponse(val message: String)
+data class HistoryResponse(
+    val message: String
+)
