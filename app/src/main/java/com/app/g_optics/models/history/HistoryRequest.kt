@@ -1,7 +1,10 @@
 package com.app.g_optics.models.history
 
+import android.provider.ContactsContract.CommonDataKinds.Email
+
 class HistoryRequest(
     val fecha: String,
+    val idagencia: Int,
     val paciente: String,
     val edad: Int,
     val nit: String,
@@ -72,5 +75,6 @@ class HistoryRequest(
     val obs: String?,
     val optometra: String?,
     val rx6OdDnp: String?,
-    val rx6OiDnp: String?
+    val rx6OiDnp: String?,
+    val email: String?
 )

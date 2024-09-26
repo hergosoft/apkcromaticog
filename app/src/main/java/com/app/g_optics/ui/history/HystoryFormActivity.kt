@@ -249,6 +249,7 @@ class HystoryFormActivity : AppCompatActivity() {
             && binding.txtoddnprx6.text.toString().isEmpty()
             && binding.txtoidnprx6.text.toString().isEmpty()
             && binding.txtobservaciones.text.toString().isEmpty()
+            && binding.txtemail.text.toString().isEmpty()
         ) {
             // Si los campos obligatorios están vacíos, mostrar el mensaje de error y no proceder
             binding.textcamposvacios.visibility = View.VISIBLE
@@ -329,7 +330,8 @@ class HystoryFormActivity : AppCompatActivity() {
                 obs = binding.txtobservaciones.text.toString(),
                 optometra = nombreUsuario ?: "Desconocido",
                 rx6OdDnp = binding.txtoddnprx6.text.toString(),
-                rx6OiDnp = binding.txtoidnprx6.text.toString()
+                rx6OiDnp = binding.txtoidnprx6.text.toString(),
+                email = binding.txtemail.text.toString()
             )
             binding.textcamposvacios.visibility = View.GONE
         }

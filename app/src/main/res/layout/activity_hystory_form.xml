@@ -176,7 +176,7 @@
 
                         <EditText
                             android:id="@+id/txtnombre"
-                            android:layout_width="464dp"
+                            android:layout_width="420dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/custom_edittext"
@@ -193,7 +193,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_weight="1"
+                        android:layout_weight="0.7"
                         android:orientation="vertical">
 
                         <TextView
@@ -237,8 +237,8 @@
                                 android:id="@+id/textedad"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="0dp"
                                 android:layout_marginStart="20dp"
+                                android:layout_marginTop="0dp"
                                 android:text=""
                                 android:textAlignment="center"
                                 android:textColor="@color/label"
@@ -250,6 +250,40 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                         </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/email"
+                            android:textAlignment="center"
+                            android:textColor="@color/label"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toEndOf="@+id/logoutbtn"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/txtemail"
+                            android:layout_width="400dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/custom_edittext"
+                            android:drawablePadding="8dp"
+                            android:hint=""
+                            android:inputType="textCapCharacters"
+                            android:padding="8dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black" />
                     </LinearLayout>
 
 
@@ -782,7 +816,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_weight="2"
+                        android:layout_weight="2.2"
                         android:orientation="horizontal">
 
                         <LinearLayout
@@ -1204,6 +1238,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
+                            android:layout_marginEnd="10dp"
                             android:layout_weight="0.1"
                             android:orientation="vertical">
 
