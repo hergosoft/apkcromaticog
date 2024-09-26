@@ -17,6 +17,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.isDigitsOnly
 import com.app.g_optics.R
 import com.app.g_optics.core.Result
 import com.app.g_optics.databinding.ActivityHystoryFormBinding
@@ -32,8 +33,8 @@ class HystoryFormActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHystoryFormBinding
     private var selectedMonth: String? = null
     private var selectedMedio: String? = null
+    private var nombreUsuario: String? = null
     val currentDate = LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)
-
 
 
     private val viewModel: HistoryViewModel by viewModels {
@@ -48,7 +49,10 @@ class HystoryFormActivity : AppCompatActivity() {
         setupToggleContent()
         // Establecer la fecha actual como un dato en el ViewModel
 
+        nombreUsuario = intent.getStringExtra("nombreUsuario")
 
+        // Usar String.format para incluir el nombre de usuario en la cadena
+        binding.trabajador.text = getString(R.string.trabajador_text, nombreUsuario)
         observeHistoryResult()
     }
 
@@ -58,12 +62,14 @@ class HystoryFormActivity : AppCompatActivity() {
                 is Result.Success -> {
                     save_dialog()
                 }
+
                 is Result.Error -> {
 
                 }
             }
         }
     }
+
     private fun setupBinding() {
         // Inicializa el binding correctamente
         binding = ActivityHystoryFormBinding.inflate(layoutInflater)
@@ -78,7 +84,11 @@ class HystoryFormActivity : AppCompatActivity() {
         setupToggleBehavior(binding.toggleContainer4, binding.hiddenContent4, binding.toggleIcon4)
     }
 
-    private fun setupToggleBehavior(container: LinearLayout, hiddenContent: LinearLayout, icon: ImageView) {
+    private fun setupToggleBehavior(
+        container: LinearLayout,
+        hiddenContent: LinearLayout,
+        icon: ImageView
+    ) {
         container.setOnClickListener {
             if (hiddenContent.visibility == View.GONE) {
                 hiddenContent.visibility = View.VISIBLE
@@ -91,7 +101,6 @@ class HystoryFormActivity : AppCompatActivity() {
     }
 
 
-
     private fun setupFilters() {
         // Configurar filtro para nombre completo (solo letras y espacios)
         binding.txtnombre.filters = arrayOf(InputFilter { source, start, end, dest, dstart, dend ->
@@ -99,9 +108,10 @@ class HystoryFormActivity : AppCompatActivity() {
         })
 
         // Configurar filtro para nombre completo (solo letras y espacios)
-        binding.txtocupacion.filters = arrayOf(InputFilter { source, start, end, dest, dstart, dend ->
-            if (source.matches("[a-zA-Z\\s]+".toRegex())) null else ""
-        })
+        binding.txtocupacion.filters =
+            arrayOf(InputFilter { source, start, end, dest, dstart, dend ->
+                if (source.matches("[a-zA-Z\\s]+".toRegex())) null else ""
+            })
 
     }
 
@@ -200,15 +210,20 @@ class HystoryFormActivity : AppCompatActivity() {
 
 
     }
-//-----------------------FUNCION PARA GUARDAR LOS DATOS EN LA BASE DE DATOS
-private fun saveHistory() {
-    // Aquí creas el objeto HistoryRequest y lo llenas con los datos necesarios
-    val request = createHistoryRequest()
-    // Llamamos a la función para guardar el historial
-    viewModel.saveHistory(request)
-}
 
-    private fun createHistoryRequest(): HistoryRequest {
+    //-----------------------FUNCION PARA GUARDAR LOS DATOS EN LA BASE DE DATOS
+    private fun saveHistory() {
+        // Aquí creas el objeto HistoryRequest
+        val request = createHistoryRequest()
+
+        // Solo procede si request no es null (es decir, si todos los campos obligatorios están llenos)
+        if (request != null) {
+            // Llamamos a la función para guardar el historial
+            viewModel.saveHistory(request)
+        }
+    }
+
+    private fun createHistoryRequest(): HistoryRequest? {
         val edadString = binding.textedad.text.toString()
         val edad = edadString.replace(Regex("[^0-9]"), "").toIntOrNull() ?: 0
         //-----------------------------------------------CHECKS
@@ -219,84 +234,106 @@ private fun saveHistory() {
         val checkBoxciruSi = findViewById<CheckBox>(R.id.checkcirugiasi)
         val checkBoxciruNo = findViewById<CheckBox>(R.id.checkcirugiano)
 
-
-        // Rellena el objeto HistoryRequest con los datos desde los campos del formulario
-        return HistoryRequest(
-            fecha = currentDate, // Obtén los datos de tus campos
-            paciente = binding.txtnombre.text.toString(),
-            edad = edad,
-            nit = binding.txtnit.text.toString(),
-            ocupacion = binding.txtocupacion.text.toString(),
-            telefono = binding.txttelefono.text.toString(),
-            direccion = binding.txtdireccion.text.toString(),
-            medio = selectedMedio.toString(),
-            antecedentes = binding.txtantecedentes.text.toString(),
-            ciru = if (checkBoxciruSi.isChecked) "X" else if (checkBoxciruNo.isChecked) "0" else "No especificado",
-            obsciru = binding.txtcirugia.text.toString(),
-            usa = if (checkBoxusaSi.isChecked) "X" else if (checkBoxusaNo.isChecked) "0" else "No especificado",
-            ultChek = selectedMonth.toString(),
-            motivo = binding.txtmc.text.toString(),
-            rx1OdEsf = binding.txtesfodrx1.text.toString(),
-            rx1OdCil = binding.txtcilodrx1.text.toString(),
-            rx1OdEje = binding.txtejeodrx1.text.toString(),
-            rx1OdAv = binding.txtadvodrx1.text.toString(),
-            rx1OdAdd = binding.txtaddOdrx1.text.toString(),
-            rx1OdAv1 = binding.txtav1odrx1.text.toString(),
-            rx1OiEsf = binding.txtesfoirx1.text.toString(),
-            rx1OiCil = binding.txtciloirx1.text.toString(),
-            rx1OiEje = binding.txtejeoirx1.text.toString(),
-            rx1OiAv = binding.txtadvodrx1.text.toString(),
-            rx1OiAdd = binding.txtaddOirx1.text.toString(),
-            rx1OiAv1 = binding.txtav1oirx1.text.toString(),
-            rx1Add = binding.txtaddrx1.text.toString(),
-            rx2OdEsf = binding.txtavscodrx2.text.toString(),
-            rx2OdEje = binding.txtavscaorx2.text.toString(),
-            rx2OiEsf = binding.txtavscoirx2.text.toString(),
-            rx3OdEsf = binding.txtesfodrx3.text.toString(),
-            rx3OdCil = binding.txtcilodrx3.text.toString(),
-            rx3OdEje = binding.txtejeodrx3.text.toString(),
-            rx3OdAv = binding.txtadvodrx3.text.toString(),
-            rx3OiEsf = binding.txtesfoirx3.text.toString(),
-            rx3OiCil = binding.txtciloirx3.text.toString(),
-            rx3OiEje = binding.txtejeoirx3.text.toString(),
-            rx3OiAv = binding.txtadvoirx3.text.toString(),
-            rx3Add = binding.txtaddrx3.text.toString(),
-            rx4OdEsf = binding.txtesfodrx4.text.toString(),
-            rx4OdCil = binding.txtcilodrx4.text.toString(),
-            rx4OdEje = binding.txtejeodrx4.text.toString(),
-            rx4OdAv = binding.txtadvodrx4.text.toString(),
-            rx4OiEsf = binding.txtesfoirx4.text.toString(),
-            rx4OiCil = binding.txtciloirx4.text.toString(),
-            rx4OiEje = binding.txtejeoirx4.text.toString(),
-            rx4OiAv = binding.txtadvoirx4.text.toString(),
-            rx4Add = binding.txtaddrx4.text.toString(),
-            rx5OdEsf = binding.txtesfodrx5.text.toString(),
-            rx5OdCil = binding.txtcilodrx5.text.toString(),
-            rx5OdEje = binding.txtejeodrx5.text.toString(),
-            rx5OdAv = binding.txtadvodrx5.text.toString(),
-            rx5OiEsf = binding.txtesfoirx5.text.toString(),
-            rx5OiCil = binding.txtciloirx5.text.toString(),
-            rx5OiEje = binding.txtejeoirx5.text.toString(),
-            rx5OiAv = binding.txtadvoirx5.text.toString(),
-            rx5Obs = binding.txtobservacionesrx5.text.toString(),
-            rx6OdEsf = binding.txtesfodrx6.text.toString(),
-            rx6OdCil = binding.txtcilodrx6.text.toString(),
-            rx6OdEje = binding.txtejeodrx6.text.toString(),
-            rx6OdAv = binding.txtadvodrx6.text.toString(),
-            rx6OdAdd = binding.txtaddodrx6.text.toString(),
-            rx6OiEsf = binding.txtesfoirx6.text.toString(),
-            rx6OiCil = binding.txtciloirx6.text.toString(),
-            rx6OiEje = binding.txtejeoirx6.text.toString(),
-            rx6OiAv = binding.txtadvoirx6.text.toString(),
-            rx6OiAdd = binding.txtaddoirx6.text.toString(),
-            altura = binding.txtalturarx6.text.toString(),
-            obs = binding.txtobservaciones.text.toString(),
-            optometra ="Daniel",
-            rx6OdDnp = binding.txtoddnprx6.text.toString(),
-            rx6OiDnp = binding.txtoidnprx6.text.toString()
-        )
+        if (binding.txtnombre.text.toString().isEmpty() && binding.txttelefono.text.toString()
+                .isEmpty() && binding.textedad.text.toString()
+                .isEmpty() && binding.txtesfodrx6.text.toString()
+                .isEmpty() && binding.txtcilodrx6.text.toString()
+                .isEmpty() && binding.txtejeodrx6.text.toString().isEmpty()
+            && binding.txtadvodrx6.text.toString().isEmpty()
+            && binding.txtaddodrx6.text.toString().isEmpty()
+            && binding.txtesfoirx6.text.toString().isEmpty()
+            && binding.txtciloirx6.text.toString().isEmpty()
+            && binding.txtejeoirx6.text.toString().isEmpty()
+            && binding.txtadvoirx6.text.toString().isEmpty()
+            && binding.txtalturarx6.text.toString().isEmpty()
+            && binding.txtoddnprx6.text.toString().isEmpty()
+            && binding.txtoidnprx6.text.toString().isEmpty()
+            && binding.txtobservaciones.text.toString().isEmpty()
+        ) {
+            // Si los campos obligatorios están vacíos, mostrar el mensaje de error y no proceder
+            binding.textcamposvacios.visibility = View.VISIBLE
+            return null
+            // No se crea ni retorna el objeto HistoryRequest
+        } else {
+            // Rellena el objeto HistoryRequest con los datos desde los campos del formulario
+            return HistoryRequest(
+                fecha = currentDate,
+                idagencia = 2,// Obtén los datos de tus campos
+                paciente = binding.txtnombre.text.toString(),
+                edad = edad,
+                nit = binding.txtnit.text.toString(),
+                ocupacion = binding.txtocupacion.text.toString(),
+                telefono = binding.txttelefono.text.toString(),
+                direccion = binding.txtdireccion.text.toString(),
+                medio = selectedMedio.toString(),
+                antecedentes = binding.txtantecedentes.text.toString(),
+                ciru = if (checkBoxciruSi.isChecked) "X" else if (checkBoxciruNo.isChecked) "0" else "No especificado",
+                obsciru = binding.txtcirugia.text.toString(),
+                usa = if (checkBoxusaSi.isChecked) "X" else if (checkBoxusaNo.isChecked) "0" else "No especificado",
+                ultChek = selectedMonth.toString(),
+                motivo = binding.txtmc.text.toString(),
+                rx1OdEsf = binding.txtesfodrx1.text.toString(),
+                rx1OdCil = binding.txtcilodrx1.text.toString(),
+                rx1OdEje = binding.txtejeodrx1.text.toString(),
+                rx1OdAv = binding.txtadvodrx1.text.toString(),
+                rx1OdAdd = binding.txtaddOdrx1.text.toString(),
+                rx1OdAv1 = binding.txtav1odrx1.text.toString(),
+                rx1OiEsf = binding.txtesfoirx1.text.toString(),
+                rx1OiCil = binding.txtciloirx1.text.toString(),
+                rx1OiEje = binding.txtejeoirx1.text.toString(),
+                rx1OiAv = binding.txtadvodrx1.text.toString(),
+                rx1OiAdd = binding.txtaddOirx1.text.toString(),
+                rx1OiAv1 = binding.txtav1oirx1.text.toString(),
+                rx1Add = binding.txtaddrx1.text.toString(),
+                rx2OdEsf = binding.txtavscodrx2.text.toString(),
+                rx2OdEje = binding.txtavscaorx2.text.toString(),
+                rx2OiEsf = binding.txtavscoirx2.text.toString(),
+                rx3OdEsf = binding.txtesfodrx3.text.toString(),
+                rx3OdCil = binding.txtcilodrx3.text.toString(),
+                rx3OdEje = binding.txtejeodrx3.text.toString(),
+                rx3OdAv = binding.txtadvodrx3.text.toString(),
+                rx3OiEsf = binding.txtesfoirx3.text.toString(),
+                rx3OiCil = binding.txtciloirx3.text.toString(),
+                rx3OiEje = binding.txtejeoirx3.text.toString(),
+                rx3OiAv = binding.txtadvoirx3.text.toString(),
+                rx3Add = binding.txtaddrx3.text.toString(),
+                rx4OdEsf = binding.txtesfodrx4.text.toString(),
+                rx4OdCil = binding.txtcilodrx4.text.toString(),
+                rx4OdEje = binding.txtejeodrx4.text.toString(),
+                rx4OdAv = binding.txtadvodrx4.text.toString(),
+                rx4OiEsf = binding.txtesfoirx4.text.toString(),
+                rx4OiCil = binding.txtciloirx4.text.toString(),
+                rx4OiEje = binding.txtejeoirx4.text.toString(),
+                rx4OiAv = binding.txtadvoirx4.text.toString(),
+                rx4Add = binding.txtaddrx4.text.toString(),
+                rx5OdEsf = binding.txtesfodrx5.text.toString(),
+                rx5OdCil = binding.txtcilodrx5.text.toString(),
+                rx5OdEje = binding.txtejeodrx5.text.toString(),
+                rx5OdAv = binding.txtadvodrx5.text.toString(),
+                rx5OiEsf = binding.txtesfoirx5.text.toString(),
+                rx5OiCil = binding.txtciloirx5.text.toString(),
+                rx5OiEje = binding.txtejeoirx5.text.toString(),
+                rx5OiAv = binding.txtadvoirx5.text.toString(),
+                rx5Obs = binding.txtobservacionesrx5.text.toString(),
+                rx6OdEsf = binding.txtesfodrx6.text.toString(),
+                rx6OdCil = binding.txtcilodrx6.text.toString(),
+                rx6OdEje = binding.txtejeodrx6.text.toString(),
+                rx6OdAv = binding.txtadvodrx6.text.toString(),
+                rx6OdAdd = binding.txtaddodrx6.text.toString(),
+                rx6OiEsf = binding.txtesfoirx6.text.toString(),
+                rx6OiCil = binding.txtciloirx6.text.toString(),
+                rx6OiEje = binding.txtejeoirx6.text.toString(),
+                rx6OiAv = binding.txtadvoirx6.text.toString(),
+                rx6OiAdd = binding.txtaddoirx6.text.toString(),
+                altura = binding.txtalturarx6.text.toString(),
+                obs = binding.txtobservaciones.text.toString(),
+                optometra = nombreUsuario ?: "Desconocido",
+                rx6OdDnp = binding.txtoddnprx6.text.toString(),
+                rx6OiDnp = binding.txtoidnprx6.text.toString()
+            )
+            binding.textcamposvacios.visibility = View.GONE
+        }
     }
-
 
 
 

@@ -37,7 +37,7 @@
 
     <string name="logout_button">Salir</string>
     <string name="history_text">HISTORIA CLINICA</string>
-    <string name="trabajador_text">TRABAJADOR: </string>
+    <string name="trabajador_text">TRABAJADOR: %s</string>
     <string name="agencia_text">AGENCIA: 2 </string>
     <string name="datos_personales">DATOS PERSONALES: </string>
     <string name="nombre_completo">NOMBRE COMPLETO: </string>
@@ -82,4 +82,5 @@
     <string name="olvidarcampos">NO OLVIDES LLENAR TODOS LOS CAMPOS</string>
     <string name="btnguardar">GUARDAR</string>
     <string name="dialogsave">DATOS GUARDADOS CORRECTAMENTE</string>
+    <string name="datos_vacios">LLENA LOS CAMPOS PARA GUARDAR</string>
 </resources>

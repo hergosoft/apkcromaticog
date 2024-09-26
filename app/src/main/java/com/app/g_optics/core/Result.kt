@@ -1,3 +1,4 @@
+
 package com.app.g_optics.core
 
 sealed class Result<out T> {

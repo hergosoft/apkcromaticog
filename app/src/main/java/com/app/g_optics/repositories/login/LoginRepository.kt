@@ -1,6 +1,4 @@
 package com.app.g_optics.repositories.login
-
-
 import com.app.g_optics.api.RetrofitClient
 import com.app.g_optics.models.login.LoginRequest
 import com.app.g_optics.models.login.LoginResponse
@@ -8,7 +6,6 @@ import com.app.g_optics.core.Result
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 class LoginRepository {
     fun login(request: LoginRequest, callback: (Result<LoginResponse>) -> Unit) {
         RetrofitClient.instance.login(request).enqueue(object : Callback<LoginResponse> {

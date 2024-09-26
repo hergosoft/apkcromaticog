@@ -1,3 +1,4 @@
+
 package com.app.g_optics.ui.login
 
 
@@ -57,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
             when (result) {
                 is Result.Success -> {
                     if (result.data.message == "Login exitoso") {
-                        welcomeDialog()
+                        welcomeDialog(result.data.nombreUsuario) // Pasamos el nombre del usuario aquí
                     } else {
                         incorrectDialog()
                     }
@@ -69,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun welcomeDialog() {
+    private fun welcomeDialog(nombreUsuario: String?) {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -78,7 +79,9 @@ class LoginActivity : AppCompatActivity() {
         val siguiente = dialog.findViewById<Button>(R.id.siguiente)
         siguiente.setOnClickListener {
             dialog.dismiss()
-            startActivity(Intent(this, HystoryFormActivity::class.java))
+            val intent = Intent(this, HystoryFormActivity::class.java)
+            intent.putExtra("nombreUsuario", nombreUsuario) // Pasamos el nombre del usuario al siguiente Activity
+            startActivity(intent)
             finish()
         }
         dialog.show()
