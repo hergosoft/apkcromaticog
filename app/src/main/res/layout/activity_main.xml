@@ -41,7 +41,7 @@
 
                 <ImageView
                     android:id="@+id/imageViewIcon"
-                    android:layout_width="match_parent"
+                    android:layout_width="600dp"
                     android:layout_height="300dp"
                     android:layout_gravity="center"
 
@@ -73,10 +73,11 @@
                     <EditText
                         android:id="@+id/username"
                         android:layout_width="match_parent"
-                        android:layout_height="52dp"
+                        android:layout_height="51dp"
                         android:layout_gravity="center"
                         android:layout_marginStart="2dp"
                         android:layout_marginEnd="2dp"
+
                         android:layout_marginBottom="15dp"
                         android:background="@drawable/custom_edittext"
                         android:drawableLeft="@drawable/baseline_person_24"

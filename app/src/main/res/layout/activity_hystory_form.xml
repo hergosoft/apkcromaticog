@@ -2890,7 +2890,6 @@
                             android:background="@drawable/custom_edittext"
                             android:hint=""
                             android:inputType="textCapCharacters"
-                            android:maxLength="13"
                             android:padding="8dp"
                             android:textAllCaps="true"
                             android:textColor="@color/black" />
