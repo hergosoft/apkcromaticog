@@ -81,9 +81,8 @@
                         android:text="@string/trabajador_text"
                         android:textAlignment="center"
                         android:textColor="@color/label"
-                        android:textSize="25sp"
-                        android:textStyle="bold"
-                        />
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/agencia"
@@ -2938,12 +2937,26 @@
 
 
                 <TextView
-                    android:id="@+id/textnoolvides"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@string/wifi_disconnection_warning"
+                    tools:ignore="MissingConstraints"
                     android:layout_gravity="center"
-                    android:text="@string/olvidarcampos"
-                    android:textColor="@color/label" />
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    tools:layout_editor_absoluteX="570dp"
+                    tools:layout_editor_absoluteY="730dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pie_pag"
+                    tools:ignore="MissingConstraints"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    tools:layout_editor_absoluteX="570dp"
+                    tools:layout_editor_absoluteY="730dp" />
             </LinearLayout>
 
 

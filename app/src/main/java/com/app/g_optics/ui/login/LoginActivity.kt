@@ -7,6 +7,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Window
 import android.widget.Button
 import androidx.activity.viewModels
@@ -37,8 +39,12 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+
+
         observeLoginResult()
     }
+
+
 
     private fun checkFields(): Boolean {
         val username = binding.username.text.toString().trim()
@@ -76,15 +82,27 @@ class LoginActivity : AppCompatActivity() {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(R.layout.dialog_welcome)
 
-        val siguiente = dialog.findViewById<Button>(R.id.siguiente)
-        siguiente.setOnClickListener {
-            dialog.dismiss()
+        dialog.window?.setDimAmount(0f)
+
+        // Mostrar el diálogo
+        dialog.show()
+
+        // Usamos un Handler para programar la redirección tras 2 segundos
+        Handler(Looper.getMainLooper()).postDelayed({
+            // Redirige a HystoryFormActivity y pasa el nombre de usuario
             val intent = Intent(this, HystoryFormActivity::class.java)
             intent.putExtra("nombreUsuario", nombreUsuario) // Pasamos el nombre del usuario al siguiente Activity
             startActivity(intent)
-            finish()
-        }
-        dialog.show()
+
+            // En lugar de llamar al finish() inmediatamente, lo hacemos después de un pequeño delay
+            Handler(Looper.getMainLooper()).postDelayed({
+                // Cerramos la actividad actual para evitar que el diálogo permanezca montado
+                finish()
+                // Ahora cerramos el diálogo en segundo plano
+                dialog.dismiss()
+            }, 100) // Un retraso de 100 ms para asegurarnos de que la nueva actividad ya se haya mostrado
+
+        }, 1000) // 2000 ms = 2 segundos
     }
 
     private fun incorrectDialog() {

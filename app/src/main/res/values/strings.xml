@@ -31,14 +31,16 @@
     <string name="username_hint">USUARIO</string>
     <string name="password_hint">CONTRASEÑA</string>
     <string name="login_button_text">INICIAR</string>
-    <string name="wifi_disconnection_warning">NO DESCONECTAR LA RED WIFI</string>
+    <string name="wifi_disconnection_warning">DEBES ESTAR CONECTADO A UNA RED WIFI  -  SOPORTE 59463737</string>
+
+    <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.0</string>
 
 
 
     <string name="logout_button">Salir</string>
     <string name="history_text">HISTORIA CLINICA</string>
     <string name="trabajador_text">TRABAJADOR: %s</string>
-    <string name="agencia_text">AGENCIA: 2 </string>
+    <string name="agencia_text">AGENCIA: PLAZA SAN JUAN</string>
     <string name="datos_personales">DATOS PERSONALES: </string>
     <string name="nombre_completo">NOMBRE COMPLETO: </string>
     <string name="edad">EDAD: </string>

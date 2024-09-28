@@ -4,7 +4,7 @@ import android.provider.ContactsContract.CommonDataKinds.Email
 
 class HistoryRequest(
     val fecha: String,
-    val idagencia: Int,
+    val idAgencia: String,
     val paciente: String,
     val edad: Int,
     val nit: String,

@@ -1,4 +1,5 @@
 package com.app.g_optics.repositories.login
+import android.util.Log
 import com.app.g_optics.api.RetrofitClient
 import com.app.g_optics.models.login.LoginRequest
 import com.app.g_optics.models.login.LoginResponse
@@ -20,6 +21,7 @@ class LoginRepository {
             }
 
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                Log.e("API_CALL", "Error: ${t.message}") // Agrega un log para ver el error
                 callback(Result.Error("Error: ${t.message}")) // Maneja la falla
             }
         })
