@@ -2415,7 +2415,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:paddingHorizontal="11dp"
-                                android:text="@string/ojo"
+                                android:text="@string/ojo6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2425,7 +2425,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:padding="11dp"
-                                android:text="@string/od"
+                                android:text="@string/od6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2435,7 +2435,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:padding="11dp"
-                                android:text="@string/oi"
+                                android:text="@string/oi6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2456,7 +2456,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="2dp"
                                 android:gravity="center"
-                                android:text="@string/esf"
+                                android:text="@string/esf6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2506,7 +2506,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/cil"
+                                android:text="@string/cil6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2554,7 +2554,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/eje"
+                                android:text="@string/eje6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2597,7 +2597,7 @@
                                 android:layout_marginTop="2dp"
                                 android:gravity="end"
                                 android:paddingTop="6dp"
-                                android:text="@string/altura"
+                                android:text="@string/altura6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2615,7 +2615,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/a_v"
+                                android:text="@string/a_v6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2678,7 +2678,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text="@string/add"
+                                android:text="@string/add6"
                                 android:textColor="@color/label"
                                 android:textSize="15sp"
                                 android:textStyle="bold" />
@@ -2768,7 +2768,7 @@
                             android:layout_height="45dp"
                             android:gravity="end"
                             android:padding="11dp"
-                            android:text="@string/od"
+                            android:text="@string/od6"
                             android:textColor="@color/label"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -2807,7 +2807,7 @@
                             android:layout_height="45dp"
                             android:gravity="end"
                             android:padding="11dp"
-                            android:text="@string/oi"
+                            android:text="@string/oi6"
                             android:textColor="@color/label"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -2867,7 +2867,7 @@
                             android:layout_height="45dp"
                             android:gravity="end"
                             android:padding="11dp"
-                            android:text="@string/observaciones"
+                            android:text="@string/observaciones6"
                             android:textColor="@color/label"
                             android:textSize="15sp"
                             android:textStyle="bold"  />
@@ -2934,6 +2934,16 @@
                     android:textSize="18sp"
                     app:cornerRadius="20dp"  />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/campos_obli"
+                    tools:ignore="MissingConstraints"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:layout_marginTop="10dp"
+                    tools:layout_editor_absoluteX="570dp"
+                    tools:layout_editor_absoluteY="730dp" />
 
 
                 <TextView

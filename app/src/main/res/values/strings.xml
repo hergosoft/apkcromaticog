@@ -21,6 +21,7 @@
         <item>CLINICA</item>
     </string-array>
 
+    <string name="disconnected">VERIFICA TU CONEXION A INTERNET</string>
     <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
     <string name="bienvenido">BIENVENID@</string>
     <string name="regresar">REGRESAR</string>
@@ -32,7 +33,7 @@
     <string name="password_hint">CONTRASEÑA</string>
     <string name="login_button_text">INICIAR</string>
     <string name="wifi_disconnection_warning">DEBES ESTAR CONECTADO A UNA RED WIFI  -  SOPORTE 59463737</string>
-
+    <string name="campos_obli">CAMPOS CON * OBLIGATORIOS</string>
     <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.0</string>
 
 
@@ -40,14 +41,14 @@
     <string name="logout_button">Salir</string>
     <string name="history_text">HISTORIA CLINICA</string>
     <string name="trabajador_text">TRABAJADOR: %s</string>
-    <string name="agencia_text">AGENCIA: PLAZA SAN JUAN</string>
+    <string name="agencia_text">AGENCIA: PLAZA VIDU</string>
     <string name="datos_personales">DATOS PERSONALES: </string>
-    <string name="nombre_completo">NOMBRE COMPLETO: </string>
-    <string name="edad">EDAD: </string>
-    <string name="email">EMAIL:</string>
+    <string name="nombre_completo">NOMBRE COMPLETO: *</string>
+    <string name="edad">EDAD: *</string>
+    <string name="email">EMAIL: *</string>
     <string name="nit_dpi">NIT - DPI: </string>
     <string name="ocupacion">OCUPACION: </string>
-    <string name="telefono">TELEFONO: </string>
+    <string name="telefono">TELEFONO: *</string>
     <string name="direccion">DIRECCION: </string>
     <string name="antecedentes_medicos">ANTECEDENTES MEDICOS: </string>
     <string name="cirugia_tratamiento_ocular">CIRUGIA O TRATAMIENTO OCULAR: </string>
@@ -75,6 +76,21 @@
     <string name="oi">OI</string>
     <string name="add">ADD</string>
 
+
+    <string name="ojo6">OJO *</string>
+    <string name="esf6">ESF. *</string>
+    <string name="cil6">CIL. *</string>
+    <string name="eje6">EJE *</string>
+    <string name="adv6">A/V *</string>
+    <string name="add_6">ADD. *</string>
+    <string name="a_v6">A.V *</string>
+    <string name="od6">OD *</string>
+    <string name="oi6">OI *</string>
+    <string name="add6">ADD *</string>
+    <string name="altura6">ALTURA *</string>
+    <string name="observaciones6">OBSERVACIONES *</string>
+
+
     <string name="avsc">A.V.S.C</string>
     <string name="ao">AO</string>
 
@@ -85,5 +101,5 @@
     <string name="olvidarcampos">NO OLVIDES LLENAR TODOS LOS CAMPOS</string>
     <string name="btnguardar">GUARDAR</string>
     <string name="dialogsave">DATOS GUARDADOS CORRECTAMENTE</string>
-    <string name="datos_vacios">LLENA LOS CAMPOS PARA GUARDAR</string>
+    <string name="datos_vacios">LLENA LOS CAMPOS OBLIGATORIOS PARA GUARDAR</string>
 </resources>

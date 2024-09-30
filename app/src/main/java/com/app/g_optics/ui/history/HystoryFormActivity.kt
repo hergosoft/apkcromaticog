@@ -2,20 +2,28 @@ package com.app.g_optics.ui.history
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.Color
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.InputFilter
+import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.AdapterView
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +34,8 @@ import com.app.g_optics.databinding.ActivityHystoryFormBinding
 import com.app.g_optics.models.history.HistoryRequest
 import com.app.g_optics.repositories.history.HistoryRepository
 import com.app.g_optics.ui.login.LoginActivity
+import com.app.g_optics.utils.NetworkChangeReceiver
+import com.google.android.material.snackbar.Snackbar
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -37,7 +47,8 @@ class HystoryFormActivity : AppCompatActivity() {
     private var selectedMedio: String? = null
     private var nombreUsuario: String? = null
     val currentDate = LocalDate.now().format(DateTimeFormatter.ISO_LOCAL_DATE)
-
+    private lateinit var networkChangeReceiver: NetworkChangeReceiver
+    private var snackbar: Snackbar? = null
 
     private val viewModel: HistoryViewModel by viewModels {
         HistoryViewModelFactory(HistoryRepository())
@@ -56,6 +67,104 @@ class HystoryFormActivity : AppCompatActivity() {
         // Usar String.format para incluir el nombre de usuario en la cadena
         binding.trabajador.text = getString(R.string.trabajador_text, nombreUsuario)
         observeHistoryResult()
+
+
+        // Inicializar y registrar el BroadcastReceiver
+        networkChangeReceiver = NetworkChangeReceiver { isConnected ->
+            if (!isConnected) {
+                showSnackbar()
+                binding.savebutton.isEnabled = false
+                binding.savebutton.alpha = 0.8f
+            } else {
+                snackbar?.dismiss()
+                snackbar = null
+                binding.savebutton.isEnabled = true
+                binding.savebutton.alpha = 1.0f
+            }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Registrar el BroadcastReceiver
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        registerReceiver(networkChangeReceiver, filter)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Anular el registro del BroadcastReceiver
+        unregisterReceiver(networkChangeReceiver)
+    }
+
+    private fun showSnackbar() {
+        if (snackbar == null || !snackbar!!.isShown) {
+            // Crear el Snackbar personalizado
+            snackbar = Snackbar.make(binding.root, "", Snackbar.LENGTH_INDEFINITE)
+                .setAction("REGRESAR") {
+                    val intent = Intent(this@HystoryFormActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+
+            // Personalizar colores
+            snackbar?.setActionTextColor(Color.parseColor("#FFFFFFFF"))
+            snackbar?.view?.setBackgroundColor(Color.parseColor("#424242"))
+
+            // Obtener la vista raíz del Snackbar
+            val snackbarView = snackbar?.view as ViewGroup
+
+            // Crear un TextView para el título
+            val title = TextView(this@HystoryFormActivity).apply {
+                text = "SIN CONEXION A INTERNET"
+                setTextColor(Color.WHITE)
+                textSize = 18f
+                setTypeface(null, Typeface.BOLD)
+                gravity = Gravity.START
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+            }
+
+            // Crear un TextView para el mensaje descriptivo
+            val message = TextView(this@HystoryFormActivity).apply {
+                text = "VUELVE A CONECTARTE A INTERNET"
+                setTextColor(Color.WHITE)
+                textSize = 14f
+                gravity = Gravity.START
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+            }
+
+            // Ajustar los márgenes y layout del Snackbar
+            val snackbarLayout = LinearLayout(this@HystoryFormActivity).apply {
+                orientation = LinearLayout.VERTICAL
+                gravity = Gravity.START
+                setPadding(20, 10, 20, 10)
+                layoutParams = LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+            }
+
+            // Añadir los TextViews (título y mensaje) al layout del Snackbar
+            snackbarLayout.addView(title)
+            snackbarLayout.addView(message)
+
+            // Añadir el layout personalizado al Snackbar
+            snackbarView.addView(snackbarLayout, 0)
+
+            // Ajustar el tamaño del Snackbar
+            snackbarView.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+            snackbarView.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            snackbarView.setPadding(20, 20, 20, 20)
+
+            // Mostrar el Snackbar personalizado
+            snackbar?.show()
+        }
     }
 
     private fun observeHistoryResult() {
@@ -236,22 +345,23 @@ class HystoryFormActivity : AppCompatActivity() {
         val checkBoxciruSi = findViewById<CheckBox>(R.id.checkcirugiasi)
         val checkBoxciruNo = findViewById<CheckBox>(R.id.checkcirugiano)
 
-        if (binding.txtnombre.text.toString().isEmpty() && binding.txttelefono.text.toString()
-                .isEmpty() && binding.textedad.text.toString()
-                .isEmpty() && binding.txtesfodrx6.text.toString()
-                .isEmpty() && binding.txtcilodrx6.text.toString()
-                .isEmpty() && binding.txtejeodrx6.text.toString().isEmpty()
-            && binding.txtadvodrx6.text.toString().isEmpty()
-            && binding.txtaddodrx6.text.toString().isEmpty()
-            && binding.txtesfoirx6.text.toString().isEmpty()
-            && binding.txtciloirx6.text.toString().isEmpty()
-            && binding.txtejeoirx6.text.toString().isEmpty()
-            && binding.txtadvoirx6.text.toString().isEmpty()
-            && binding.txtalturarx6.text.toString().isEmpty()
-            && binding.txtoddnprx6.text.toString().isEmpty()
-            && binding.txtoidnprx6.text.toString().isEmpty()
-            && binding.txtobservaciones.text.toString().isEmpty()
-            && binding.txtemail.text.toString().isEmpty()
+        if (binding.txtnombre.text.toString().isEmpty()
+            || binding.txttelefono.text.toString().isEmpty()
+            || binding.textedad.text.toString().isEmpty()
+            || binding.txtesfodrx6.text.toString().isEmpty()
+            || binding.txtcilodrx6.text.toString().isEmpty()
+            || binding.txtejeodrx6.text.toString().isEmpty()
+            || binding.txtadvodrx6.text.toString().isEmpty()
+            || binding.txtaddodrx6.text.toString().isEmpty()
+            || binding.txtesfoirx6.text.toString().isEmpty()
+            || binding.txtciloirx6.text.toString().isEmpty()
+            || binding.txtejeoirx6.text.toString().isEmpty()
+            || binding.txtadvoirx6.text.toString().isEmpty()
+            || binding.txtalturarx6.text.toString().isEmpty()
+            || binding.txtoddnprx6.text.toString().isEmpty()
+            || binding.txtoidnprx6.text.toString().isEmpty()
+            || binding.txtobservaciones.text.toString().isEmpty()
+            || binding.txtemail.text.toString().isEmpty()
         ) {
             // Si los campos obligatorios están vacíos, mostrar el mensaje de error y no proceder
             binding.textcamposvacios.visibility = View.VISIBLE
@@ -261,7 +371,7 @@ class HystoryFormActivity : AppCompatActivity() {
             // Rellena el objeto HistoryRequest con los datos desde los campos del formulario
             return HistoryRequest(
                 fecha = currentDate,
-                idAgencia = "2",
+                idAgencia = "5",
                 paciente = binding.txtnombre.text.toString(),
                 edad = edad,
                 nit = binding.txtnit.text.toString(),
@@ -352,29 +462,12 @@ class HystoryFormActivity : AppCompatActivity() {
 
     private fun handleMonthSelection(parent: AdapterView<*>?, position: Int) {
         selectedMonth = parent?.getItemAtPosition(position).toString()
-        saveMonthSelection()
+
     }
 
-    private fun saveMonthSelection() {
-        if (selectedMonth != null) {
-            // Guardar el mes seleccionado en alguna base de datos o preferencias
-            Toast.makeText(this, "Mes guardado: $selectedMonth", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "No se ha seleccionado un mes", Toast.LENGTH_SHORT).show()
-        }
-    }
 
     private fun handleMedioSelection(parent: AdapterView<*>?, position: Int) {
         selectedMedio = parent?.getItemAtPosition(position).toString()
-        savemedioSelection()
-    }
-    private fun savemedioSelection() {
-        if (selectedMedio != null) {
-            // Guardar el mes seleccionado en alguna base de datos o preferencias
-            Toast.makeText(this, "Medio guardado: $selectedMedio", Toast.LENGTH_SHORT).show()
-        } else {
-            Toast.makeText(this, "No se ha seleccionado un medio", Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun showDatePicker() {
@@ -436,7 +529,7 @@ class HystoryFormActivity : AppCompatActivity() {
                 dialog.dismiss()
             }, 100) // Un retraso de 100 ms para asegurarnos de que la nueva actividad ya se haya mostrado
 
-        }, 1000) // 2000 ms = 2 segundos
+        }, 1200) // 2000 ms = 2 segundos
 
     }
 }

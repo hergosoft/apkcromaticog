@@ -11,6 +11,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.Window
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.app.g_optics.ui.history.HystoryFormActivity
@@ -18,6 +19,7 @@ import com.app.g_optics.R
 import com.app.g_optics.core.Result
 import com.app.g_optics.databinding.ActivityMainBinding
 import com.app.g_optics.repositories.login.LoginRepository
+import com.app.g_optics.utils.isInternetAvailable
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,10 +34,14 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.loginButton.setOnClickListener {
-            if (checkFields()) {
-                val username = binding.username.text.toString()
-                val password = binding.password.text.toString()
-                loginViewModel.login(username, password)
+            if (isInternetAvailable(this)) {
+                if (checkFields()) {
+                    val username = binding.username.text.toString()
+                    val password = binding.password.text.toString()
+                    loginViewModel.login(username, password)
+                }
+            } else {
+               disconnectDialog()
             }
         }
 
@@ -110,6 +116,19 @@ class LoginActivity : AppCompatActivity() {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setContentView(R.layout.dialog_incorrect)
+
+        val ocultar = dialog.findViewById<Button>(R.id.ocultar)
+        ocultar.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun disconnectDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(R.layout.dialog_disconnect)
 
         val ocultar = dialog.findViewById<Button>(R.id.ocultar)
         ocultar.setOnClickListener {
