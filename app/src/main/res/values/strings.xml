@@ -3,6 +3,29 @@
 
     <string name="welcome_message">Bienvenido a G-Optics</string>
 
+<!--    Registrar Agencia-->
+    <string name="register_tittle">REGISTRA ESTA TABLET EN TU AGENCIA</string>
+    <string name="register_select">SELECCIONA LA AGENCIA EN LA QUE TE ENCUENTRAS</string>
+    <string name="button_register">REGISTRAR</string>
+    <string name="text_registeradv">ESTE PROCESO SE REALIZA SOLO LA PRIMERA VEZ</string>
+<!--    -->
+
+<!--Login-->
+    <string name="login_text">ACCEDER</string>
+    <string name="username_hint">USUARIO</string>
+    <string name="password_hint">CONTRASEÑA</string>
+    <string name="login_button_text">INICIAR</string>
+    <string name="wifi_disconnection_warning">DEBES ESTAR CONECTADO A UNA RED WIFI  -  SOPORTE 59463737</string>
+    <string name="campos_obli">CAMPOS CON * OBLIGATORIOS</string>
+    <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.0</string>
+    <string name="disconnected">VERIFICA TU CONEXION A INTERNET</string>
+    <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
+    <string name="bienvenido">BIENVENID@</string>
+<!---->
+
+
+
+<!--    Formulario de Historia clinica-->
     <string-array name="ultima_visita">
         <item>1 MES</item>
         <item>2 MESES</item>
@@ -12,7 +35,6 @@
         <item>1 AÑO</item>
         <item>MAS DE 1 AÑO</item>
     </string-array>
-
     <string-array name="arraymedio">
         <item>REDES</item>
         <item>CENTRO COMERCIAL</item>
@@ -20,24 +42,8 @@
         <item>VOLANTEO</item>
         <item>CLINICA</item>
     </string-array>
-
-    <string name="disconnected">VERIFICA TU CONEXION A INTERNET</string>
-    <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
-    <string name="bienvenido">BIENVENID@</string>
     <string name="regresar">REGRESAR</string>
     <string name="labelmedios">MEDIO: </string>
-
-
-    <string name="login_text">ACCEDER</string>
-    <string name="username_hint">USUARIO</string>
-    <string name="password_hint">CONTRASEÑA</string>
-    <string name="login_button_text">INICIAR</string>
-    <string name="wifi_disconnection_warning">DEBES ESTAR CONECTADO A UNA RED WIFI  -  SOPORTE 59463737</string>
-    <string name="campos_obli">CAMPOS CON * OBLIGATORIOS</string>
-    <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.0</string>
-
-
-
     <string name="logout_button">Salir</string>
     <string name="history_text">HISTORIA CLINICA</string>
     <string name="trabajador_text">TRABAJADOR: %s</string>
@@ -102,4 +108,5 @@
     <string name="btnguardar">GUARDAR</string>
     <string name="dialogsave">DATOS GUARDADOS CORRECTAMENTE</string>
     <string name="datos_vacios">LLENA LOS CAMPOS OBLIGATORIOS PARA GUARDAR</string>
+<!--    -->
 </resources>
