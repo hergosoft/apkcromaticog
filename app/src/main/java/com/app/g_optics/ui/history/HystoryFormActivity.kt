@@ -167,6 +167,8 @@ class HystoryFormActivity : AppCompatActivity() {
         }
     }
 
+
+    // Metodo que obtiene el resultado de la operacion en la API
     private fun observeHistoryResult() {
         viewModel.historyResult.observe(this) { result ->
             when (result) {

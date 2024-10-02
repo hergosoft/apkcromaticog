@@ -1,7 +1,6 @@
 package com.app.g_optics.models.history
 
-import android.provider.ContactsContract.CommonDataKinds.Email
-
+// Clase que representa el cuerpo de la solicitud al guardar un historial en la API
 class HistoryRequest(
     val fecha: String,
     val idAgencia: String,
