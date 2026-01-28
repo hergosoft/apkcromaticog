@@ -372,7 +372,7 @@ class HystoryFormActivity : AppCompatActivity() {
             // Rellena el objeto HistoryRequest con los datos desde los campos del formulario
             return HistoryRequest(
                 fecha = currentDate,
-                idAgencia = "14",
+                idAgencia = "16",
                 paciente = binding.txtnombre.text.toString(),
                 edad = edad,
                 nit = binding.txtnit.text.toString(),
@@ -512,7 +512,7 @@ class HystoryFormActivity : AppCompatActivity() {
 
         // Usamos un Handler para programar la redirección tras 2 segundos
         Handler(Looper.getMainLooper()).postDelayed({
-            // Redirige a HystoryFormActivity y pasa el nombre de usuario
+            // Rigged a HystoryFormActivity y pasa el nombre de usuario
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
