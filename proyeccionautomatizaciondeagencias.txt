@@ -1,0 +1,42 @@
+BD
+
+SPINNER
+cuando inicie el dialog con el spinner con los nombre, en esos datos estara
+el nombre de la agencia, el id de agencia, traera estos datos de la tabla
+cuando el campo serial relacionado con tablet este vacio,
+si el campo serial con tablet esta lleno, significa que esta agencia ya tiene
+registrado una tablet, entonces solo llenara el spinner con las agencias
+que todavia tengan dispositivo registrado
+
+INSERT O UPDATE
+cuando la persona seleccione el elemento de el spinner y este seguro que este
+elemnto es el correcto, al momento de guardar, va a realizar un update al
+campo serial relacionado con la tablet, entonces a la otra oportunidad
+que intente ingresar sesion, si el campo fue guardado correctamente 
+trasladara el id de agencia y el nombre de la agencia, y si no esta guardado
+y el androidId no aparece estara lanzando el dialog para registrar agencia
+
+
+EJECUCION DE LA APLICACION
+primera vez que se ejecute el programa
+
+
+aparecera el dialog que pedira que seleccione la agencia para registrar
+el AndroidId de la tablet
+
+
+guardara y regresara al login, para que vuelva a iniciar sesion,
+
+
+A la hora de iniciar sesion nuevamente, revisara si esta guardado el AndroidID
+vinculado a alguna agencia, 
+
+
+devolviendo un mensaje, existente si esta registrado y no existente si no esta,
+aparte de esa respuesta si es existente, devolvera tambien el nombre de agencia
+y el Id de la agencia, para setear este id en el formulario,
+y el nombre de agencia en el texto principal
+
+
+con esto logramos registrar la primera vez que inicie sesion en la aplicacion
+y a la segunda vez estara iniciando si la accion fue realizada con exito
