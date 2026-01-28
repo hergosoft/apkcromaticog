@@ -17,7 +17,7 @@
     <string name="login_button_text">INICIAR</string>
     <string name="wifi_disconnection_warning">DEBES ESTAR CONECTADO A UNA RED WIFI  -  SOPORTE 59463737</string>
     <string name="campos_obli">CAMPOS CON * OBLIGATORIOS</string>
-    <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.0</string>
+    <string name="pie_pag"> WWW.G-OPTICS.COM.GT - VERSION 1.1</string>
     <string name="disconnected">VERIFICA TU CONEXION A INTERNET</string>
     <string name="datos_incorrectos">TUS DATOS SON INCORRECTOS</string>
     <string name="bienvenido">BIENVENID@</string>
@@ -47,7 +47,7 @@
     <string name="logout_button">Salir</string>
     <string name="history_text">HISTORIA CLINICA</string>
     <string name="trabajador_text">TRABAJADOR: %s</string>
-    <string name="agencia_text">AGENCIA: PLAZA VIDU</string>
+    <string name="agencia_text">AGENCIA: PACIFIC PINULA</string>
     <string name="datos_personales">DATOS PERSONALES: </string>
     <string name="nombre_completo">NOMBRE COMPLETO: *</string>
     <string name="edad">EDAD: *</string>

@@ -346,34 +346,33 @@ class HystoryFormActivity : AppCompatActivity() {
         // Referencias a los CheckBox cirugia
         val checkBoxciruSi = findViewById<CheckBox>(R.id.checkcirugiasi)
         val checkBoxciruNo = findViewById<CheckBox>(R.id.checkcirugiano)
-
-        if (binding.txtnombre.text.toString().isEmpty()
-            || binding.txttelefono.text.toString().isEmpty()
-            || binding.textedad.text.toString().isEmpty()
-            || binding.txtesfodrx6.text.toString().isEmpty()
-            || binding.txtcilodrx6.text.toString().isEmpty()
-            || binding.txtejeodrx6.text.toString().isEmpty()
-            || binding.txtadvodrx6.text.toString().isEmpty()
-            || binding.txtaddodrx6.text.toString().isEmpty()
-            || binding.txtesfoirx6.text.toString().isEmpty()
-            || binding.txtciloirx6.text.toString().isEmpty()
-            || binding.txtejeoirx6.text.toString().isEmpty()
-            || binding.txtadvoirx6.text.toString().isEmpty()
-            || binding.txtalturarx6.text.toString().isEmpty()
-            || binding.txtoddnprx6.text.toString().isEmpty()
-            || binding.txtoidnprx6.text.toString().isEmpty()
-            || binding.txtobservaciones.text.toString().isEmpty()
-            || binding.txtemail.text.toString().isEmpty()
-        ) {
+        //if (binding.txtnombre.text.toString().isEmpty()
+           // || binding.txttelefono.text.toString().isEmpty()
+          //  || binding.textedad.text.toString().isEmpty()
+          //  || binding.txtesfodrx6.text.toString().isEmpty()
+           // || binding.txtcilodrx6.text.toString().isEmpty()
+           // || binding.txtejeodrx6.text.toString().isEmpty()
+           // || binding.txtadvodrx6.text.toString().isEmpty()
+           // || binding.txtaddodrx6.text.toString().isEmpty()
+           // || binding.txtesfoirx6.text.toString().isEmpty()
+           // || binding.txtciloirx6.text.toString().isEmpty()
+           // || binding.txtejeoirx6.text.toString().isEmpty()
+           // || binding.txtadvoirx6.text.toString().isEmpty()
+           // || binding.txtalturarx6.text.toString().isEmpty()
+            //|| binding.txtoddnprx6.text.toString().isEmpty()
+            //|| binding.txtoidnprx6.text.toString().isEmpty()
+           // || binding.txtobservaciones.text.toString().isEmpty()
+           // || binding.txtemail.text.toString().isEmpty()
+       // ) {
             // Si los campos obligatorios están vacíos, mostrar el mensaje de error y no proceder
-            binding.textcamposvacios.visibility = View.VISIBLE
-            return null
+       //    binding.textcamposvacios.visibility = View.VISIBLE
+        //    return null
             // No se crea ni retorna el objeto HistoryRequest
-        } else {
+      //  } else {
             // Rellena el objeto HistoryRequest con los datos desde los campos del formulario
             return HistoryRequest(
                 fecha = currentDate,
-                idAgencia = "5",
+                idAgencia = "14",
                 paciente = binding.txtnombre.text.toString(),
                 edad = edad,
                 nit = binding.txtnit.text.toString(),
@@ -448,13 +447,8 @@ class HystoryFormActivity : AppCompatActivity() {
                 email = binding.txtemail.text.toString()
             )
             binding.textcamposvacios.visibility = View.GONE
-        }
+        //}
     }
-
-
-
-
-
 
     private fun navigateToLogin() {
         val intent = Intent(this, LoginActivity::class.java)
@@ -466,7 +460,6 @@ class HystoryFormActivity : AppCompatActivity() {
         selectedMonth = parent?.getItemAtPosition(position).toString()
 
     }
-
 
     private fun handleMedioSelection(parent: AdapterView<*>?, position: Int) {
         selectedMedio = parent?.getItemAtPosition(position).toString()
